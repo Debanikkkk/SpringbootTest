@@ -6,12 +6,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TestprojectspringApplication {
 
+    private final OrderService orderService;
     public static void main(String[] args) {
 
 //        SpringApplication.run(TestprojectspringApplication.class, args);
 //    var orderService=new OrderService(new PaypalPaymentService()  );
-            var orderService=new OrderService();
-            orderService.setPaymentService(new PaypalPaymentService());
+//            var orderService=new OrderService();
+
+//            orderService.setPaymentService(new PaypalPaymentService());
+        orderService.placeOrder(PaymentService.class);
             orderService.placeOrder();
     }
 
