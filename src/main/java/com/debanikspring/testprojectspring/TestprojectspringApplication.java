@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TestprojectspringApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TestprojectspringApplication.class, args);
+
+//        SpringApplication.run(TestprojectspringApplication.class, args);
+    var orderService=new OrderService(new PaypalPaymentService()  );
+            orderService.placeOrder();
     }
 
 }
